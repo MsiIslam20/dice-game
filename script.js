@@ -1,6 +1,6 @@
 //Dice game Starting
 
-var scores, roundScores, activePlayers,  dice , gamePlaying, lastdice
+var scores, roundScores, activePlayers,  dice , gamePlaying, lastDice
 
 init();
 
@@ -8,13 +8,13 @@ document.querySelector('.btn-roll').addEventListener('click' , function(){
     if(gamePlaying){
         var dice = Math.floor(Math.random() * 6) + 1;
 
-        //dispaly the result 
+        //display the result 
     
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png'
 
-        if(dice === 6 && lastdice === 6){
+        if(dice === 6 && lastDice === 6){
             scores[activePlayers] = 0;
             document.querySelector('#score-' + activePlayers ).textContent =  '0';
             nextPlayer();
@@ -27,7 +27,7 @@ document.querySelector('.btn-roll').addEventListener('click' , function(){
             nextPlayer()
         }
 
-        lastdice = dice;
+        lastDice = dice;
     }
 
 })
@@ -71,6 +71,7 @@ function nextPlayer(){
             document.querySelector('.dice').style.display = 'none';
 }
 
+//Initialization all
 function init(){
     scores = [0,0];
     roundScores = 0;
